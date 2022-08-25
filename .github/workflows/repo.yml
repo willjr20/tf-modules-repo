@@ -1,4 +1,4 @@
-name: Monorepo Versioning
+name: Repo Versioning
 concurrency:  #avoid concurrent runs on label events, might cause issues on super fast commits  ¯\_(ツ)_/¯
   group: ${{ github.head_ref }}
   cancel-in-progress: true
@@ -297,7 +297,7 @@ jobs:
                 newVersion: await readText(`outputs/${folder.name}/new-version.txt`),
               })));
 
-      - name: Dispatch monorepo_release event
+      - name: Dispatch repo_release event
         uses: actions/github-script@v2
         env:
           RELEASE_LIST: '${{ steps.extract-releases.outputs.result }}'
@@ -314,6 +314,6 @@ jobs:
             const { owner, repo } = context.repo;
             await github.repos.createDispatchEvent({
               owner, repo,
-              event_type: 'monorepo_release',
+              event_type: 'repo_release',
               client_payload: payload,
             });

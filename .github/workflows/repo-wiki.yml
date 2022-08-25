@@ -1,7 +1,7 @@
-name: 'Monorepo: Wiki'
+name: 'Repo: Wiki'
 on:
   repository_dispatch:
-    types: [monorepo_release]
+    types: [repo_release]
 
 jobs:
   update-wiki:
