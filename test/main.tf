@@ -1,9 +1,5 @@
-provider "azurerm" {
-  features {}
-}
-
-module "az-resource-group" {
-  source = "../../resource-group"
+module "azure_resource_group" {
+  source = "../../azure-resource-group"
 
   # Resource Group Variables
 
