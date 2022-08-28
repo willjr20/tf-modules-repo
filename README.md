@@ -31,7 +31,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_az_rg_location"></a> [az\_rg\_location](#input\_az\_rg\_location) | The Azure Region where the Resource Group should exist | `string` | n/a | yes |
 | <a name="input_az_rg_name"></a> [az\_rg\_name](#input\_az\_rg\_name) | The Name of the Resource Group | `string` | n/a | yes |
-| <a name="input_az_tags"></a> [az\_tags](#input\_az\_tags) | A mapping of tags which should be assigned to all resources | `map(any)` | `{}` | no |
+| <a name="input_az_tags"></a> [az\_tags](#input\_az\_tags) | Mapping of tags which should be assigned to all resources | `map(any)` | `{}` | no |
 
 ## Outputs
 
