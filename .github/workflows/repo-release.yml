@@ -14,6 +14,7 @@ jobs:
         env:
           CLIENT_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
         with:
+          token: ${{ secrets.GH_PAT_FREIGHTBOT }}
           script: |
             const { owner, repo } = context.repo;
             const { sha, releases } = JSON.parse(process.env.CLIENT_PAYLOAD);
