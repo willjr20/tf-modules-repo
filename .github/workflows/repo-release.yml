@@ -24,3 +24,4 @@ jobs:
               console.log('Tagging', tagName, 'as', sha);
               await github.git.createRef({ owner, repo, ref, sha });
             }
+            
