@@ -13,15 +13,15 @@ jobs:
       - uses: actions/github-script@v2
         env:
           CLIENT_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+
+      - uses: actions/github-script@v6
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { owner, repo } = context.repo;
             const { sha, releases } = JSON.parse(process.env.CLIENT_PAYLOAD);
-
             for (const release of releases) {
               const tagName = `rel/${release.module}/${release.newVersion}`;
-
               const ref = `refs/tags/${tagName}`;
               console.log('Tagging', tagName, 'as', sha);
               await github.git.createRef({ owner, repo, ref, sha });
