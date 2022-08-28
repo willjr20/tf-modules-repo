@@ -10,7 +10,7 @@ variable "az_rg_location" {
 }
 
 variable "az_tags" {
-  description = "A mapping of tags which should be assigned to all resources"
+  description = "Mapping of tags which should be assigned to all resources"
   type        = map(any)
   default     = {}
 }
